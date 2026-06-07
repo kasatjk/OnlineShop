@@ -1,4 +1,6 @@
-import { Product } from './entities/Product.js';
+import {Product} from './entities/Product.js';
+import {Customer} from "./entities/Customer.js";
+import {Cart} from "./entities/Cart.js";
 
 async function loadProducts() {
   const response = await fetch('https://fakestoreapi.com/products');
@@ -23,4 +25,4 @@ async function loadProducts() {
   );
 }
 
-loadProducts().catch(err => console.error("Failed to load products:", err));
+loadProducts();

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ethical Glass Marketplace</title>
+  <title>Everything Shop</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/Product.css">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -19,19 +19,70 @@
     <a href="#" class="logo">everything<span>.shop</span></a>
     <nav class="nav-links">
       <a href="#" class="active">Shop</a>
-      <a href="#">About</a>
+      <a href="/404.html">About</a>
     </nav>
     <div class="cart-status">
-      <button id="cart-toggle-btn" class="nav-cart-btn">
+      <a href="Order.html" id="cart-toggle-btn" class="nav-cart-btn">
         Cart <span class="cart-count"></span>
-      </button>
+      </a>
     </div>
   </div>
 </header>
 
-<main class="content-wrapper">
-  <div id="products"></div>
-</main>
+<div class="layout-container">
+
+  <aside class="sidebar-filters">
+    <div class="filter-sticky-wrapper">
+      <h2 class="filter-title">Categories</h2>
+      <ul class="category-list">
+        <li>
+          <button class="filter-btn" datatype="all">All Products</button>
+        </li>
+        <li>
+          <button class="filter-btn" datatype="menClothing">Men's clothing</button>
+        </li>
+        <li>
+          <button class="filter-btn" datatype="womenClothing">Women's clothing</button>
+        </li>
+        <li>
+          <button class="filter-btn" datatype="electronics">Electronics</button>
+        </li>
+        <li>
+          <button class="filter-btn" datatype="jewellery">Jewellery</button>
+        </li>
+      </ul>
+
+      <div class="filter-divider"></div>
+
+      <h2 class="filter-title">Availability</h2>
+      <label class="filter-checkbox-label">
+        <input type="checkbox" checked/>
+        <span>In Stock Only</span>
+      </label>
+    </div>
+  </aside>
+
+  <section class="main-shop-content">
+    <div id="products"></div>
+  </section>
+
+</div>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="#" class="logo">everything<span>.shop</span></a>
+      <p class="footer-tagline">Fast, easy, reliable.</p>
+    </div>
+    <div class="footer-links-group">
+      <h3>Company</h3>
+      <a href="404.html">About</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 everything.shop.</p>
+  </div>
+</footer>
 
 <script src="js/app.js" type="module"></script>
 
