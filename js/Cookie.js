@@ -15,8 +15,7 @@ export class Cookie {
     for (let cookie of cookies) {
       cookie = cookie.trim();
       if (cookie.startsWith(nameEQ)) {
-        // FIX: Wrapped return value in decodeURIComponent
-        return decodeURIComponent(cookie.substring(nameEQ.length));
+        return cookie;
       }
     }
     return null;
