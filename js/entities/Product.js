@@ -111,14 +111,4 @@ export class Product {
       quantity: this.quantity
     };
   }
-
-  static deJSON(data) {
-    if (!data) {
-      return null;
-    }
-
-    return new Product(data.name, data.price, data.description,
-      data.category, data.image, data.rating, data.discount, data.quantity);
-  }
-
 }

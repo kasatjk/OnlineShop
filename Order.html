@@ -17,12 +17,10 @@
     <a href="index.html" class="logo">everything<span>.shop</span></a>
     <nav class="nav-links">
       <a href="index.html">Shop</a>
+      <a href="Order.html" class="active">Orders</a>
       <a href="/404.html">About</a>
     </nav>
     <div class="cart-status">
-      <a href="Order.html" class="nav-cart-btn active">
-        Cart <span class="cart-count"></span>
-      </a>
     </div>
   </div>
 </header>
@@ -46,152 +44,148 @@
        style="text-decoration:none;display:inline-block;width:auto;padding:14px 32px;">Continue shopping</a>
   </div>
 
-  <div class="order-container" id="checkout-layout">
+  <form method="POST">
+    <div class="order-container" id="checkout-layout">
 
-    <div class="order-left">
-      <a href="index.html" class="order-back-link">← Back to shop</a>
-      <h1 class="order-page-title">Checkout</h1>
-      <div class="order-card">
-        <h3 class="order-card__title" data-step="1">Contact information</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" name="first_name" autocomplete="given-name">
-            <span class="field-error"></span>
-          </div>
-          <div class="form-group">
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" name="last_name" autocomplete="family-name">
-            <span class="field-error"></span>
-          </div>
-        </div>
-        <div class="form-row full">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="example@domain.com" autocomplete="email">
-            <span class="field-error"></span>
-          </div>
-        </div>
-        <div class="form-row full">
-          <div class="form-group">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" placeholder="+X XXX XXX XXX" autocomplete="tel">
-          </div>
-        </div>
-      </div>
-
-      <div class="order-card">
-        <h3 class="order-card__title" data-step="2">Shipping address</h3>
-        <div class="form-row full">
-          <div class="form-group">
-            <label for="address">Street address</label>
-            <input type="text" id="address" name="address" autocomplete="street-address">
-            <span class="field-error"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" name="city" autocomplete="address-level2">
-            <span class="field-error"></span>
-          </div>
-          <div class="form-group">
-            <label for="zip">ZIP / Postal code</label>
-            <input type="text" id="zip" name="zip" autocomplete="postal-code">
-            <span class="field-error"></span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="country">Country/Region</label>
-            <select id="country" name="country" autocomplete="country">
-              <option value="">Select…</option>
-              <option value="EU">European Union</option>
-              <option value="GB">United Kingdom</option>
-              <option value="CH">Switzerland</option>
-              <option value="UA">Ukraine</option>
-              <option value="other">Other</option>
-            </select>
-            <span class="field-error"></span>
-          </div>
-          <div class="form-group">
-            <label for="state">State / Region</label>
-            <input type="text" id="state" name="state" placeholder="NY" autocomplete="address-level1">
-          </div>
-        </div>
-        <div class="form-row full">
-          <div class="form-group">
-            <label for="notes">Delivery notes (optional)</label>
-            <textarea id="notes" name="notes" placeholder="Leave at door, ring once…"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <div class="order-card">
-        <h3 class="order-card__title" data-step="3">Payment</h3>
-
-        <div class="payment-methods">
-          <div class="payment-option">
-            <input type="radio" name="payment" id="pay-card" value="card" checked>
-            <label for="pay-card">
-              Card
-            </label>
-          </div>
-          <div class="payment-option">
-            <input type="radio" name="payment" id="pay-cod" value="cod">
-            <label for="pay-cod">
-              Cash
-            </label>
-          </div>
-        </div>
-
-        <div class="card-fields visible" id="card-fields">
-          <div class="form-row full">
+      <div class="order-left">
+        <a href="index.html" class="order-back-link">← Back to shop</a>
+        <h1 class="order-page-title">Checkout</h1>
+        <div class="order-card">
+          <h3 class="order-card__title" data-step="1">Contact information</h3>
+          <div class="form-row">
             <div class="form-group">
-              <label for="card-name">Name on card</label>
-              <input type="text" id="card-name" name="card_name" placeholder="Jane Smith" autocomplete="cc-name">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first_name" autocomplete="given-name" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last_name" autocomplete="family-name" required>
+              <span class="field-error"></span>
             </div>
           </div>
           <div class="form-row full">
             <div class="form-group">
-              <label for="card-number">Card number</label>
-              <div class="card-number-wrapper">
-                <input type="text" id="card-number" name="card_number" placeholder="0000 0000 0000 0000" maxlength="19"
-                       autocomplete="cc-number" inputmode="numeric">
-                <span class="card-brand-icon" id="card-brand-icon"></span>
-              </div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="example@domain.com" autocomplete="email"
+                     required pattern="^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.[a-zA-Z]{2,}$">
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+X XXX XXX XXX" minlength="9" maxlength="15"  autocomplete="tel" pattern="^\+[0-9]+$">
+            </div>
+          </div>
+        </div>
+
+        <div class="order-card">
+          <h3 class="order-card__title" data-step="2">Shipping address</h3>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="address">Street address</label>
+              <input type="text" id="address" name="address" autocomplete="street-address" required>
+              <span class="field-error"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="card-expiry">Expiry</label>
-              <input type="text" id="card-expiry" name="card_expiry" placeholder="MM / YY" maxlength="7"
-                     autocomplete="cc-exp" inputmode="numeric">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" autocomplete="address-level2" required>
+              <span class="field-error"></span>
             </div>
             <div class="form-group">
-              <label for="card-cvv">CVV</label>
-              <input type="text" id="card-cvv" name="card_cvv" placeholder="•••" maxlength="4" autocomplete="cc-csc"
-                     inputmode="numeric">
+              <label for="zip">ZIP / Postal code</label>
+              <input type="text" id="zip" name="zip" autocomplete="postal-code" required pattern="^[0-9]+$">
+              <span class="field-error"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="country">Country/Region</label>
+              <select id="country" name="country" autocomplete="country" required>
+                <option value="EU">European Union</option>
+                <option value="GB">United Kingdom</option>
+                <option value="CH">Switzerland</option>
+                <option value="UA">Ukraine</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="state">State / Region</label>
+              <input type="text" id="state" name="state" autocomplete="address-level1" required>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label for="notes">Delivery notes (optional)</label>
+              <textarea id="notes" name="notes" placeholder="Leave at door, ring once…"></textarea>
             </div>
           </div>
         </div>
+
+        <div class="order-card">
+          <h3 class="order-card__title" data-step="3">Payment</h3>
+
+          <div class="payment-methods">
+            <div class="payment-option">
+              <input type="radio" name="payment" id="pay-card" value="card" checked>
+              <label for="pay-card">
+                Card
+              </label>
+            </div>
+          </div>
+
+          <div class="card-fields visible" id="card-fields">
+            <div class="form-row full">
+              <div class="form-group">
+                <label for="card-name">Name on card</label>
+                <input type="text" id="card-name" name="card_name" placeholder="Jane Smith" autocomplete="cc-name"
+                       required pattern="[a-zA-Z]+$">
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label for="card-number">Card number</label>
+                <div class="card-number-wrapper">
+                  <input type="text" id="card-number" name="card_number" placeholder="0000 0000 0000 0000"
+                         minlength="13" maxlength="19" pattern="[0-9]+$"
+                         autocomplete="cc-number" inputmode="numeric" required>
+                  <span class="card-brand-icon" id="card-brand-icon"></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Expiry</label>
+                <input type="text" id="card-expiry" name="card_expiry" placeholder="MM/YY" maxlength="5"
+                       minlength="5" autocomplete="cc-exp" inputmode="text" required pattern="[0-9]+/+[0-9]+$">
+              </div>
+              <div class="form-group">
+                <label for="card-cvc">CVC2</label>
+                <input type="password" id="card-cvc" name="card_cvc" placeholder="•••" pattern="[0-9]+" minlength="3" maxlength="3" autocomplete="cvc"
+                       inputmode="numeric" required>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <aside class="order-summary">
+        <div class="order-card">
+          <h3 class="order-card__title" data-step="">Order summary</h3>
+          <div class="summary-items" id="summary-items"></div>
+          <div class="summary-totals" id="summary-totals"></div>
+          <input type="submit" value="Place order" class="btn-place-order">
+          <input type="reset" value="Reset" class="btn-place-order">
+        </div>
+      </aside>
 
     </div>
-
-    <aside class="order-summary">
-      <div class="order-card">
-        <h3 class="order-card__title" data-step="">Order summary</h3>
-        <div class="summary-items" id="summary-items"></div>
-        <div class="summary-totals" id="summary-totals"></div>
-        <button class="btn-place-order" id="place-order-btn" type="button">
-          <span class="btn-text">Place order</span>
-          <span class="btn-spinner"></span>
-        </button>
-      </div>
-    </aside>
-
-  </div>
+  </form>
 </main>
 
 <footer class="main-footer">

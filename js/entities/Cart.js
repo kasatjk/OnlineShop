@@ -1,21 +1,6 @@
-export class Cart {
-  items = [];
+import {Product} from "./Product.js";
 
-  constructor(items = []) {
-    this.items = items;
-  }
+export class Cart {}
 
-  addProduct(product, index) {
-    this.items.push(product, index);
-  }
-
-  deleteProduct(productName) {
-    for (let i in this.items) {
-      if (i.name === productName) {
-        this.items.splice(this.items.indexOf(i), 1);
-      }
-    }
-  }
+export class CartPopup {
 }
-
-export class CartPopup {}

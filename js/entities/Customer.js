@@ -3,28 +3,23 @@ import {Cookie} from '../Cookie.js';
 
 export class Customer {
   name;
-  address;
   email;
   password;
-  phone;
   cart;
 
-  constructor(name = 'user', address = 'Earth', email = 'example@domain.com',
-              password = '123456789', phone = '+380000000000', cart = new Cart) {
+  constructor(name = 'user', email = 'example@domain.com',
+              password = '123456789', cart = new Cart) {
     this.name = name;
-    this.address = address;
     this.email = email;
     this.password = password;
-    this.phone = phone;
     this.cart = cart;
   }
 
   saveData() {
     const dataToSave = {
       name: this.name,
-      address: this.address,
       email: this.email,
-      phone: this.phone,
+      password: this.password,
       cart: this.cart
     };
     Cookie.save("customer", JSON.stringify(dataToSave), 7);
@@ -39,9 +34,8 @@ export class Customer {
         let user = new Customer();
 
         user.name = data.name;
-        user.address = data.address;
         user.email = data.email;
-        user.phone = data.phone;
+        user.password = data.password;
         user.cart = data.cart;
         return user;
       } catch (ex) {
